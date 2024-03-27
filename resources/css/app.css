@@ -175,3 +175,23 @@ color: white;
 border-radius: 4px;
 margin-bottom: 30px;;
 }
+
+.new-note-btn {
+    border: 1px solid #4a5568;
+    background-color: #cbd5e0;
+    color: #4a5568;
+    border-radius: 8px;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    margin-left: 85%; /* Adjust as needed */
+}
+
+.new-note-btn:hover {
+    background-color: #5b6168;
+    color: rgb(255, 255, 255);
+}
+
+
+
