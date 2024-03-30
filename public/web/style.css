@@ -1,0 +1,239 @@
+body{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #e6e8ed;
+    color: #666666;
+    font-family: "montserrat", sans-serif;
+}
+
+.materials-icon-outlined{
+    vertical-align: middle;
+    line-height: 1px;
+}
+
+.text-primary{
+    color:#666666;
+}
+
+.text-blue{
+    color: #246dec;
+}
+
+.text-green{
+    color: #367952;
+}
+
+.text-orange{
+    color: #f5b74f;
+}
+
+.text-weight-bold{
+    font-weight: 600;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 260px repeat(3, 1fr); /* Adjust grid-template-columns to place main container elements beside each other */
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas: "sidebar header header header" "sidebar main main main";
+    height: 100vh;
+}
+
+.header{
+    grid-area: header;
+    height: 70px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 0 30px 0 30px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0);
+}
+
+.menu-icon{
+    display: none;
+}
+
+.menu-icon:hover{
+    cursor: pointer;
+}
+
+/* CSS Adjustments */
+
+#sidebar {
+    grid-area: sidebar;
+    height: 100%;
+    background-color: #21232d;
+    color: #fff; /* Changed text color to white for better contrast */
+    overflow-y: auto;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.sidebar-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.sidebar-brand {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.sidebar-list {
+    padding: 0;
+    margin-top: 15px;
+    list-style-type: none;
+}
+
+.sidebar-list-item {
+    padding: 15px 20px; /* Adjusted padding for better spacing */
+    transition: background-color 0.3s; /* Added transition for smoother hover effect */
+}
+
+.sidebar-list-item:hover {
+    background-color: #333; /* Darken background color on hover */
+    cursor: pointer;
+}
+
+.sidebar-responsive{
+    display: inline !important;
+    position: absolute;
+}
+
+.main-container{
+    grid-area: main;
+    overflow-y: auto;
+    padding: 20px 20px;
+}
+
+.main-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-title > p {
+    font-size: 20px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.card {
+    display: flex;
+    flex: 1 1 0 calc(33.33% - 20px); /* Adjust card width */
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #ffffff;
+    padding: 25px;
+    box-sizing: border-box;
+    border: 1px solid #d2d2d3; /* Add border to each card */
+    border-radius: 5px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.card:first-child{
+    border-left: 7px solid #246dec;
+}
+
+.card:nth-child(2){
+    border-left: 7px solid #f5b74f;
+}
+
+.card:nth-child(3){
+    border-left: 7px solid #367952;
+}
+
+
+
+.card > span {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-inner > p {
+    font-size: 18px;
+}
+
+.card-inner > span {
+    font-size: 35px;
+}
+
+.charts{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:20px;
+}
+
+.charts-card{
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    padding: 25px;
+    box-sizing: border-box;
+    -webkit-column-break-inside: avoid;
+    border: 1px solid #d2d2d3;
+    border-radius: 5px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.chart-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+@media screen and (max-width:992px) {
+    .grid-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 3fr;
+        grid-template-areas: "header" "main";
+    }
+
+    #sidebar{
+        display: none;
+    }
+
+    .menu-icon {
+        display: inline;
+    }
+
+    .sidebar-title > span {
+        display: inline;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .main-cards{
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 0;
+    }
+
+    .charts {
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .header-left{
+        display: none;
+    }
+}

@@ -8,8 +8,17 @@ use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::redirect('/', '/note')->name('dashboard');
+Route::get('/', function () {
+    return redirect('welcome');
+});
 
+Route::view('dashboard', 'dashboard')
+->middleware(['auth', 'verified', 'normal'])
+->name('dashboard');
+
+Route::view('admin', 'admin')
+->middleware(['auth', 'verified', 'admin'])
+->name('admin');
 Route::middleware(['auth', 'verified'])->group(function () {
     // Route::get('/note', [NoteController::class, 'index'])->name('note.index');
     // Route::get('/note/create', [NoteController::class, 'create'])->name('note.create');
@@ -36,6 +45,3 @@ Route::middleware('auth')->group(function (){
 require __DIR__ . '/auth.php';
 
 
-Route::get('/', function () {
-    return redirect('welcome');
-});
