@@ -16,7 +16,7 @@ class normal
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!Auth::check()){
+        if (!\Illuminate\Support\Facades\Auth::check()){
             return redirect()->route('Login');
         }
 
@@ -29,5 +29,7 @@ class normal
         if ($userRole==1){
             return redirect()->route('admin');
         }
+
+        return $next($request);
     }
 }

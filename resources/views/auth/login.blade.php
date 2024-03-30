@@ -1,45 +1,4 @@
 <x-guest-layout>
-
-    <?php
-
-    use App\Livewire\Forms\LoginForm;
-    use Illuminate\Support\Facades\Session;
-
-    use function Livewire\Volt\form;
-    use function Livewire\Volt\layout;
-
-    layout('layouts.guest');
-
-    form(LoginForm::class);
-
-    $login = function () {
-        $this->validate();
-
-        $this->form->authenticate();
-
-        Session::regenerate();
-
-        $userRole=Auth::user()->role;
-
-        switch($userRole){
-            case 1:
-            $this->redirectIntended(default: route('superadmin', absolute: false), navigate: true);
-            break;
-            case 2:
-            $this->redirectIntended(default: route('admin', absolute: false), navigate: true);
-            break;
-            case 3:
-            $this->redirectIntended(default: route('dashboard', absolute: false), navigate: true);
-            break;
-            default:
-                return redirect('/');
-        }
-
-
-    };
-
-    ?>
-
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 

@@ -19,7 +19,7 @@ class admin
     public function handle(Request $request, Closure $next): Response
     {
 
-        if (!Auth::check()){
+        if (!\Illuminate\Support\Facades\Auth::check()){
             return redirect()->route('Login');
         }
 
@@ -32,5 +32,7 @@ class admin
         if ($userRole==2){
             return redirect()->route('dashboard');
         }
+
+        return $next($request);
     }
 }
