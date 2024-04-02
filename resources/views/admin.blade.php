@@ -110,8 +110,10 @@
 }
 
 .main-container{
+    display: flex;
+    justify-content: center;
     grid-area: main;
-    overflow-y: auto;
+    height: 100vh;
     padding: 20px 20px;
 }
 
@@ -180,6 +182,7 @@
 .charts{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    overflow: auto;
     gap:20px;
 }
 
@@ -191,6 +194,7 @@
     -webkit-column-break-inside: avoid;
     border: 1px solid #d2d2d3;
     border-radius: 5px;
+    overflow: auto;
     box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
 }
 

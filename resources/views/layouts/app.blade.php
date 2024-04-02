@@ -13,6 +13,15 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <style>
+            /* Add a minimum height to the main element */
+main {
+    height: 100vh; /* Adjust the height as needed */
+    overflow-y:auto; /* Add vertical scroll if content overflows */
+}
+
+        </style>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
