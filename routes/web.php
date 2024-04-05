@@ -8,9 +8,16 @@ use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/welcome', function () {
-    return view('welcome');
+
+// routes/web.php
+
+Route::get('/', function () {
+    return view('welcome'); // Replace 'welcome' with your welcome blade template name
   });
+
+Route::get('/welcome', function () {
+  return view('welcome');
+});
 
 Route::view('dashboard', 'dashboard')
 ->middleware(['auth', 'verified', 'normal'])
