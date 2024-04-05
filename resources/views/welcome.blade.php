@@ -21,7 +21,7 @@
     nav {
         position: fixed;
         top: 0;
-        left: 0%;
+        left: 80%;
         width: 100%;
         background-color: transparent; /* transparent background for nav */
         padding: 10px 20px;
@@ -92,7 +92,7 @@
         @else
             <a href="{{ route('login') }}" class="bg-[#FF2D20] text-white py-2 px-4 rounded-md hover:bg-black-600 transition duration-300">Log in</a>
             @if (Route::has('register'))
-            <a href="{{ route('register') }}" class="bg-[#FF2D20] text-white py-2 px-4 rounded-md hover:bg-black-600 transition duration-300">Register</a>
+            <a href="{{ route('register') }}" class="bg-[#FF2D20] text-white py-2 px-4 rounded-md hover:bg-black-600 transition duration-300">Sign up</a>
             @endif
         @endauth
         @endif
