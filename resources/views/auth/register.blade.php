@@ -1,6 +1,11 @@
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
+        <div class="text-white">
+            <h1 class="unique-heading">Welcome.</h1>
+            <p>Kindly ensure you have all the required information before registering.</p>
+        </div>
+        <br>
 
         <!-- Name -->
         <div>
@@ -50,3 +55,13 @@
         </div>
     </form>
 </x-guest-layout>
+
+<style>
+    .unique-heading {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #FF5733; /* Orange color */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
+        margin-bottom: 20px; /* Adds some space below the heading */
+    }
+</style>

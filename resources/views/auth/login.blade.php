@@ -4,6 +4,11 @@
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
+        <div class="text-white">
+            <h1 class="unique-heading">Welcome back.</h1>
+            <p>Using the information you provided when registering, log in.</p>
+        </div>
+        <br>
 
         <!-- Email Address -->
         <div>
@@ -45,3 +50,13 @@
         </div>
     </form>
 </x-guest-layout>
+
+<style>
+    .unique-heading {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #FF5733; /* Orange color */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
+        margin-bottom: 20px; /* Adds some space below the heading */
+    }
+</style>

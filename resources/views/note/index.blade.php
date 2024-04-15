@@ -8,7 +8,7 @@
             @foreach ($notes as $note)
                 <div class="note">
                     <div class="note-body">
-                        {{ Str::words($note->note, 30) }}
+                        {{ Str::words($note->note, 4) }}
                     </div>
                     <div class="note-buttons">
                         <a href="{{ route('note.show', $note) }}" class="note-edit-button">View</a>
