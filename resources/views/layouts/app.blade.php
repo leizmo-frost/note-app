@@ -15,7 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-800">
+        <div class="min-h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
             @include('layouts.navigation')
 
             <!-- Page Heading -->
@@ -32,5 +32,6 @@
                 {{ $slot }}
             </main>
         </div>
+
     </body>
 </html>
